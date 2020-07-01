@@ -68,6 +68,6 @@ namespace nrr
         };
         return iterable_wrapper{ std::forward<T>(iterable) };
     }
-}
+} // namespace nrr
 
 #undef NRR_REQUIRES
