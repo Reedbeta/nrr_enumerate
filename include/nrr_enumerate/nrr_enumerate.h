@@ -1,4 +1,4 @@
-// Iterate indices and items at the same time
+// nrr_enumerate: iterate indices and items at the same time
 // See http://www.reedbeta.com/blog/python-like-enumerate-in-cpp17/
 
 // Copyright 2020 Nathan Reed
@@ -34,7 +34,7 @@ namespace nrr
         struct iterator
         {
             size_t i;
-            decltype(std::begin(std::declval<T>())) iter;
+            decltype(std::begin(iterable)) iter;
             bool operator != (const iterator & other) const { return iter != other.iter; }
             void operator ++ () { ++i; ++iter; }
             auto operator * () const { return std::tie(i, *iter); }
@@ -55,7 +55,7 @@ namespace nrr
         struct iterator
         {
             size_t i;
-            decltype(std::cbegin(std::declval<T>())) iter;
+            decltype(std::cbegin(iterable)) iter;
             bool operator != (const iterator & other) const { return iter != other.iter; }
             void operator ++ () { ++i; ++iter; }
             auto operator * () const { return std::tie(i, *iter); }
