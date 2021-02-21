@@ -16,6 +16,7 @@
 // limitations under the License.
 
 #pragma once
+#include <iterator>
 #include <tuple>
 
 // Hide requires clauses from pre-C++20 compilers and MSVC Intellisense
